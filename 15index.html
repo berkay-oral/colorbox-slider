@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOX COLORS SLİDER CLİCK EVENT</title>
+</head>
+<body>
+    
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+     
+        .area{
+         /* border: 2px solid black; */
+            width: 250px;
+            height: 250px;
+            margin:  50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .boxes{
+            width: 1260px;
+            position: absolute;
+            transition: 1s;
+            transform: translateX(0px);
+        }  
+    
+        .box{
+            width: 250px;
+            height: 250px;
+            float: left;           
+        }
+
+        
+        .clear{
+            clear: both;
+        }
+    </style>
+
+  <div class="area"> 
+      
+    <div class="boxes">
+        <div class="box" style="background: red;"></div>
+        <div class="box"  style="background: blue;"></div>
+        <div class="box"  style="background: purple;"></div>
+        <div class="box"  style="background: pink;"></div>
+        <div class="box"  style="background: orange;"></div>
+        <div class="clear"></div>
+   
+    </div>
+
+
+
+    <script>
+        let moves = ["translateX(0px)",  "translateX(-250px)", " translateX(-500px)", " translateX(-750px)", "translateX(-1000px)", "translateX(-1250px)"]
+        let index = 0;
+
+        let boxes = document.querySelector(".boxes");
+        boxes.addEventListener("click", slayt);
+
+        function slayt(){
+             if(index < (moves.length-1)){
+                 boxes.style.transform = moves[index++];
+             }
+             else{
+                 index = 0;
+             }
+        }
+    </script>
+
+   
+
+</div>
+  
+
+</body>
+</html>
